@@ -1,0 +1,20 @@
+<div class="center-info">
+    <h2 class="title ">Акції</h2>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="changeWidth6" *ngFor="let discount of discounts">
+            <div class="block-info">
+                <a class="block-info-link" href="#">
+                    <div class="block-info-img">
+                        <img [src]="discount.imagePath" alt="">
+                    </div>
+                    <h5>{{discount.name}}</h5>
+                </a>
+                <div class="text-sm "></div>
+                <hr>
+                <a class="btn"  [routerLink]="['/actions',discount.id]" >дізнатись більше</a>
+            </div>
+        </div>
+    </div>
+</div>

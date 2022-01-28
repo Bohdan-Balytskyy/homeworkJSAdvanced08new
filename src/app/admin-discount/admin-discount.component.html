@@ -1,0 +1,53 @@
+<button class="button" type="button" (click)="isAdd = true">ДОДАТИ АКЦІЮ</button>
+<table>
+    <thead>
+        <tr>
+            <th>Дата</th>
+            <th>Назва</th>
+            <th>Заголовок</th>
+            <th>Опис</th>
+            <th>Картинка</th>
+            <th>Дії</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let discount of discounts">
+            <td>{{discount.data}}</td>
+            <td>{{discount.name}}</td>
+            <td>{{discount.title}}</td>
+            <td>{{discount.description}}</td>
+            <td> <img [src]="discount.imagePath" alt=""></td>
+            <td>
+                <button type="button" class="edit" (click)="edit(discount)">Редагувати</button>
+                <button type="button" class="delete" (click)="delete(discount.id)">Видалити</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="modal-block" [hidden]="!isEdit && !isAdd">
+    <div class="block">
+        <h3>
+            <span *ngIf="isAdd">Add</span><span *ngIf="isEdit">Edit</span> discount
+            <span class="close" (click)="closeWindow()">&times;</span>
+        </h3>
+        <input type="date" [(ngModel)]="editDiscount.data">
+        <input type="text" placeholder="enter name here" [(ngModel)]="editDiscount.name">
+        <input type="text" placeholder="enter title here" [(ngModel)]="editDiscount.title">
+        <textarea name="" id="" cols="30" rows="5" [(ngModel)]="editDiscount.description"></textarea>
+        <input type="text" placeholder="enter imagePath here" [(ngModel)]="editDiscount.imagePath" hidden>
+        <div class="withImage">
+            <input type=”button” value="Загрузити картинку" class="upload" (click)="inputFile.click()" *ngIf="!isUploaded">
+            <input type="file" (change)=upload($event) #inputFile hidden>
+            <div class="progressbar" *ngIf="!isUploaded">
+                <span [style.width.%]="uploadPercent"></span>
+            </div>
+            <img [src]="editDiscount.imagePath" alt="" *ngIf="isUploaded">
+            <input type="button" value="Видалити картинку" (click)="deleteImage(editDiscount.imagePath)" *ngIf="isUploaded"
+                class="upload">
+        </div>
+        <div class="buttons">
+            <input *ngIf="isAdd" type="button" value="Add" class="add2" (click)="add()">
+            <input *ngIf="isEdit" type="button" value="Save" class="save" (click)="save()">
+        </div>
+    </div>
+</div>

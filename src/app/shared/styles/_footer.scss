@@ -1,0 +1,255 @@
+footer {
+  margin-top: auto;
+  .footer {
+    border-top: 4px solid #b5d8f7;
+    max-width: 1920px;
+    margin: 0 auto;
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 35px;
+      padding: 20px 0;
+      .logo {
+        max-width: 136px;
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+      .footer-menu {
+        display: flex;
+        li {
+          a {
+            font-size: 16px;
+            line-height: 1em;
+            color: #252525;
+            &:hover {
+              color: #b5d8f7;
+            }
+          }
+        }
+        li + li {
+          margin-left: 55px;
+        }
+      }
+      .footer-info {
+        display: flex;
+        justify-content: space-between;
+        max-width: 43%;
+        width: 100%;
+        line-height: 1.25em;
+        .s-delivery-address,
+        .order-phone,
+        .work-time {
+          color: #5a5a5a;
+          text-align: center;
+          font-size: 14px;
+          p {
+            strong {
+              font-weight: bold;
+              color: #252525;
+            }
+            b {
+              font-weight: 400;
+              color: #252525;
+            }
+          }
+          a {
+            b {
+              font-weight: 400;
+              color: #252525;
+            }
+          }
+        }
+      }
+    }
+    .footer-bottom {
+      margin: 0 35px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      .copyright {
+        font-size: 14px;
+        color: #5a5a5a;
+        white-space: nowrap;
+        p {
+          display: inline-block;
+          margin-right: 40px;
+        }
+      }
+      .pay-cards {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .pay-card-item {
+          position: relative;
+          width: 69px;
+          height: 39px;
+          border: 1px solid #dcdcdc;
+          border-radius: 5px;
+          display: inline-block;
+          img {
+            max-width: 45px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+        .pay-card-item + .pay-card-item {
+          margin-left: 5px;
+        }
+      }
+      .social {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        span {
+          margin-right: 20px;
+          font-size: 14px;
+          color: #252525;
+        }
+        ul {
+          display: flex;
+          li + li {
+            margin-left: 5px;
+          }
+          li {
+            .icon-btn {
+              display: block;
+              width: 49px;
+              height: 49px;
+              background: #b5d8f7;
+              border: 2px solid #b5d8f7;
+              border-radius: 10px;
+              position: relative;
+              &:hover {
+                background: transparent;
+              }
+              img {
+                width: 18px;
+                height: 18px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+            }
+          }
+        }
+      }
+      .develope {
+        .footer-dev-logo {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          span {
+            font-weight: 400;
+            margin-right: 15px;
+            font-size: 14px;
+            color: #5a5a5a;
+          }
+          &:hover {
+            color: #b5d8f7;
+          }
+          &::before {
+            background: #ffffff
+              url(https://monosushi.com.ua/wp-content/themes/monosushi/img/redstone-icon-black.svg);
+            background-repeat: no-repeat;
+            width: 75px;
+            background-position: right center;
+            background-size: 100%;
+            content: "";
+            right: 0px;
+            top: 0px;
+            position: absolute;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1500px) {
+  footer {
+    .footer {
+      .footer-top {
+        .footer-info {
+          max-width: 100%; //(max-width: 1500px)
+          width: unset; //(max-width: 1500px)
+          .order-phone,
+          .work-time {
+            margin-left: 20px; //(max-width: 1500px)
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1400px) {
+  footer {
+    .footer {
+      .footer-top {
+        margin: 0 25px; //(max-width: 1400px)
+        padding: 15px 0; //(max-width: 1400px)
+        .logo {
+          max-width: 123px; //(max-width: 1400px)
+        }
+        .footer-menu {
+          li {
+            a {
+              font-size: 14px; //(max-width: 1400px)
+            }
+          }
+        }
+      }
+      .footer-bottom {
+        margin: 0 25px; //@media (max-width: 1400px)
+        margin-bottom: 15px; //@media (max-width: 1400px)
+        .copyright {
+          font-size: 12px; //@media (max-width: 1400px)
+        }
+        .pay-cards {
+          .pay-card-item {
+            width: 56px; //@media (max-width: 1400px)
+            height: 33px; //@media (max-width: 1400px)
+            img {
+              max-width: 30px; //@media (max-width: 1400px)
+            }
+          }
+        }
+        .social {
+          span {
+            font-size: 12px; //@media (max-width: 1400px)
+          }
+          ul {
+            li {
+              .icon-btn {
+                width: 40px; //@media (max-width: 1400px)
+                height: 40px; //@media (max-width: 1400px)
+                img {
+                  width: 14px; //@media (max-width: 1400px)
+                  height: 14px; //@media (max-width: 1400px)
+                }
+              }
+            }
+          }
+        }
+        .develope {
+          .footer-dev-logo {
+            span {
+              font-size: 12px; //@media (max-width: 1400px)
+              margin-right: 10px; //@media (max-width: 1400px)
+            }
+            &::before {
+              right: -12px; //@media (max-width: 1400px)
+            }
+          }
+        }
+      }
+    }
+  }
+}

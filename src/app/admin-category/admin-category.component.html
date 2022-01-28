@@ -1,0 +1,55 @@
+<button class="button" type="button" (click)="isAdd = true">ДОДАТИ КАТЕГОРІЮ</button>
+<table>
+    <thead>
+        <tr>
+            <th>Назва</th>
+            <th>Шлях</th>
+            <th>Картинка</th>
+            <th>Дії</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let category of categorys">
+            <td>{{category.name}}</td>
+            <td>{{category.path}}</td>
+            <td> <img [src]="category.imagePath" alt=""></td>
+            <td>
+                <button type="button" class="edit" (click)="edit(category)">Редагувати</button>
+                <button type="button" class="delete" (click)="delete(category.id)">Видалити</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="modal-block" [hidden]="!isEdit && !isAdd">
+    <form [formGroup]="myForm">
+        <div class="block">
+            <h3>
+                <span *ngIf="isAdd">Add</span><span *ngIf="isEdit">Edit</span> category
+                <span class="close" (click)="closeWindow()">&times;</span>
+            </h3>
+            <input type="text" placeholder="enter name here" 
+            formControlName="name">
+            <input type="text" placeholder="enter path here" 
+            formControlName="path">
+            <input type="text" placeholder="enter imagePath here" hidden
+            formControlName="imagePath">
+            <div class="withImage">
+                <input type=”button” value="Загрузити картинку" class="upload" 
+                (click)="inputFile.click()" *ngIf="!isUploaded">
+                <input type="file" (change)=upload($event) #inputFile hidden>
+                <div class="progressbar" *ngIf="!isUploaded">
+                    <span [style.width.%]="uploadPercent"></span>
+                </div>
+                <img [src]="myForm.value.imagePath" alt="" *ngIf="isUploaded">
+                <input type="button" value="Видалити картинку" (click)="deleteImage(myForm.value.imagePath)" 
+                *ngIf="isUploaded" class="upload">
+            </div>
+            <div class="buttons">
+                <input *ngIf="isAdd" type="button" [disabled] = "myForm.invalid"
+                value="Add" class="add2" (click)="add()">
+                <input *ngIf="isEdit" type="button" [disabled] = "myForm.invalid"
+                value="Save" class="save" (click)="save()">
+            </div>
+        </div>
+    </form>
+</div>

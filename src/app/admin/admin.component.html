@@ -1,0 +1,12 @@
+<div class="main">
+    <nav>
+        <button routerLinkActive="active" [routerLink] = "'action'" type="button">Акції</button>
+        <button routerLinkActive="active" [routerLink] = "'category'" type="button">Категорії</button>
+        <button routerLinkActive="active" [routerLink] = "'product'" type="button">Товари</button>
+        <button routerLinkActive="active" [routerLink] = "'order'" type="button">Замовлення</button>
+        <button routerLinkActive="active" [routerLink] = "''" type="button">Вихід</button>
+    </nav>
+    <div class="main-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

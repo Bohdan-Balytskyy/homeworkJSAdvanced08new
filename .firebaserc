@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "sushi-4af8b": {
+      "hosting": {
+        "sushi": [
+          "sushi-4af8b"
+        ]
+      }
+    }
+  }
+}

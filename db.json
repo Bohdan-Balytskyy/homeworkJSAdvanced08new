@@ -1,0 +1,46 @@
+{
+  "discounts": [
+    {
+      "title": "50% знижки на 'Рол тижня",
+      "name": "рол тижня",
+      "description": "Щотижня діє знижка 50% на один з ролів у нашому меню",
+      "data": "2021-12-01",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-4af8b.appspot.com/o/images%2Frol-tyzhnya-2-1-697x379.png?alt=media&token=274547b7-3851-4586-8ae2-738f8fd23613",
+      "id": 1
+    },
+    {
+      "title": "\"3+1=5\"",
+      "name": "Кожен п'ятий рол в подарунок",
+      "description": "Замовляйте 4 роли та отримуйте ще 1 безкоштовно",
+      "data": "2022-01-05",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-4af8b.appspot.com/o/images%2F5-j-v-podarunok-01-697x379.png?alt=media&token=b96c7978-e6a9-46b0-a143-6771d28d2218",
+      "id": 2
+    }
+  ],
+  "categorys": [
+    {
+      "name": "Роли",
+      "path": "rolls",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-4af8b.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=85842da3-f005-4cda-b667-29994c5624b3",
+      "id": 1
+    },
+    {
+      "name": "Сети",
+      "path": "sets",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-4af8b.appspot.com/o/images%2Fnav-img-sets.svg?alt=media&token=49add355-d705-4eb9-abf6-8425cb1f4fc5",
+      "id": 2
+    },
+    {
+      "name": "Напої",
+      "path": "drinks",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-4af8b.appspot.com/o/images%2Fnav-img-drinks.svg?alt=media&token=ef6ad324-a649-4cd6-9374-879abc22e2d4",
+      "id": 3
+    },
+    {
+      "name": "Соуси",
+      "path": "sauces",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-4af8b.appspot.com/o/images%2Ficon.svg?alt=media&token=e4ff2bf5-1d13-47b6-ada6-23dc8de8f65e",
+      "id": 4
+    }
+  ]
+}
