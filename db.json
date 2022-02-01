@@ -42,5 +42,23 @@
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-4af8b.appspot.com/o/images%2Ficon.svg?alt=media&token=e4ff2bf5-1d13-47b6-ada6-23dc8de8f65e",
       "id": 4
     }
+  ],
+  "products": [
+    {
+      "name": "Філадельфія з лососем",
+      "path": "rolls",
+      "composition": "Риc, крем сир, огірок, лосось",
+      "volume": "280",
+      "price": 174,
+      "category": {
+        "name": "Роли",
+        "path": "rolls",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-4af8b.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=85842da3-f005-4cda-b667-29994c5624b3",
+        "id": 1
+      },
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-4af8b.appspot.com/o/images%2F1.-filadelfiya-z-lososem.jpg?alt=media&token=4a3bfa59-0686-4407-9d64-56a74da7e97e",
+      "id": 1,
+      "count": 1
+    }
   ]
 }

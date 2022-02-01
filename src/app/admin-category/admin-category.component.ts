@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CategoryService } from '../services/category.service';
+import { ImageService } from '../services/image.service';
 import { Icategory } from '../shared/interfaces/category';
-import { AngularFireStorage  } from '@angular/fire/storage';
-import { Observable } from 'rxjs';
-
 
 @Component({
   selector: 'app-admin-category',
@@ -20,13 +18,16 @@ export class AdminCategoryComponent implements OnInit {
   uploadPercent: number = 0;
   isUploaded: boolean = false;
 
-  constructor(private categoryService: CategoryService, private storage:AngularFireStorage ) { 
+  constructor(private categoryService: CategoryService, private imageService: ImageService ) { 
     this.myForm = new FormGroup({
       "name": new FormControl("", Validators.required),
       "path": new FormControl("", Validators.required),
       "imagePath": new FormControl("", Validators.required),
       "id": new FormControl(null)
     });
+    imageService.streamuploadPercent.subscribe(
+      (data) => this.uploadPercent = data
+    )
   }
 
   ngOnInit(): void {
@@ -78,7 +79,7 @@ export class AdminCategoryComponent implements OnInit {
   }
   upload(event:any):void {
     const file = event.target.files[0];
-    this.uploadFile('images', file.name, file)
+    this.imageService.uploadFile('images', file.name, file)
       .then(data => {
         data.subscribe(
           (url) => {
@@ -89,36 +90,15 @@ export class AdminCategoryComponent implements OnInit {
       })
       .catch(err=>console.log(err));
   }
-  async uploadFile(folder: string, name: string, file: File | null): Promise<Observable<string>>{
-    const path = `${folder}/${name}`;
-    let url: Observable<string>;
-    if (file) {
-      try {
-        const storageRef = this.storage.ref(path);
-        const task = storageRef.put(file);
-        task.percentageChanges().subscribe(
-          (data) => this.uploadPercent = data
-        )
-        await task;
-        url = storageRef.getDownloadURL();
-      } catch(err: any) {
-        console.log(err);
-      }
-    } else {
-      console.log('wrong format');
-    }
-    return Promise.resolve(url);
-  }
-  deleteImage(url:string): void{
-    const storageRef = this.storage.refFromURL(url);
-    storageRef.delete().subscribe(
+  deleteImage(url:string) {
+    this.imageService.deleteImage(url).subscribe(
       () => {
         console.log('File deleted');
         this.isUploaded = false;
         this.uploadPercent = 0;
         this.myForm.patchValue({ imagePath: '' });
       },
-      (err)=> console.log(err)
-    );
+      (err) => console.log(err)
+    )
   }
 }

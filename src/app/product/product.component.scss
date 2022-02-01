@@ -1,0 +1,244 @@
+@import "../shared/styles/base";
+@import "../shared/styles/commonClases";
+@import "../shared/styles/borderAround";
+
+section {
+  .container {
+    .categories-menu {
+      margin: 20px 0;
+      text-align: center;
+      .categories-list {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background: #fff;
+        min-width: 176px;
+        list-style: none;
+        .categories-list-item {
+          cursor: pointer;
+          padding: 0;
+          font-size: 16px;
+          min-width: 168px;
+          font-weight: bold;
+          border: 1px solid #dcdcdc;
+          color: #5a5a5a;
+          margin-left: -1px;
+          margin-top: -1px;
+          position: relative;
+          &:hover {
+            color: #252525;
+          }
+          &.active {
+            border: 1px solid transparent;
+            color: #252525;
+            &::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: -1px;
+              width: 100%;
+              height: 4px;
+              background: #b5d8f7;
+            }
+          }
+          a {
+            padding: 17px 0;
+            display: block;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    .row {
+      margin-top: 40px;
+      .product {
+        @extend %border-around;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 20px;
+        max-width: 398px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 5px;
+        .product_image-wrap {
+          height: 240px;
+          cursor: pointer;
+          .product_image {
+            position: relative;
+            display: block;
+            height: 100%;
+            img {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              display: inline-block;
+              max-width: 100%;
+              max-height: 100%;
+              vertical-align: top;
+            }
+          }
+        }
+        .product_title-wrap {
+          display: flex;
+          justify-content: space-between;
+          margin: 10px 0;
+          .product_title {
+            font-weight: 600;
+            line-height: 1.5em;
+            margin: auto;
+            color: #252525;
+            font-size: 20px;
+            a {
+              position: relative;
+              overflow: hidden;
+              max-height: 3em;
+              text-decoration: none;
+              color: inherit;
+            }
+          }
+        }
+        .product_desc {
+          overflow: hidden;
+          max-height: 3.8em;
+          margin-bottom: auto;
+          display: flex;
+          justify-content: space-between;
+          p {
+            max-width: 300px;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 16px;
+            line-height: 1.5em;
+            color: #5a5a5a;
+          }
+          .product_size {
+            display: inline-block;
+            color: #5a5a5a;
+            margin-bottom: 25px;
+            max-width: 60px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 1.6em;
+            padding-left: 15px;
+            min-width: 60px;
+          }
+        }
+        .product_controls {
+          display: flex;
+          align-items: center;
+          margin-top: 10px;
+          justify-content: space-between;
+          .product_price-wrap {
+            position: relative;
+            max-width: 100%;
+            .product_price {
+              color: #252525;
+              font-weight: 400;
+              font-size: 20px;
+              width: 84px;
+              b {
+                font-weight: bold;
+                color: #252525;
+              }
+            }
+          }
+          .thumb-input-number {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid #dcdcdc;
+            border-radius: 10px;
+            color: #252525;
+            font-size: 16px;
+            line-height: 16px;
+            margin-right: auto;
+            margin-left: auto;
+            button {
+              line-height: 24px;
+              color: #5a5a5a;
+              background-color: #fff;
+              border-radius: 10px;
+              padding-bottom: 2px;
+              height: 36px;
+              font-size: 24px;
+              cursor: pointer;
+              background: none;
+              border: 0;
+              &:first-child {
+                font-size: 30px;
+              }
+              &:hover {
+                background-color: #b5d8f7;
+              }
+            }
+            input {
+              font: inherit;
+              width: 30px;
+              height: 44px;
+              font-weight: 600;
+              text-align: center;
+              border-radius: 0;
+              background: none;
+              border: none;
+            }
+          }
+          .btn {
+            display: inline-block;
+            vertical-align: bottom;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 10px;
+            color: #252525;
+            border: 2px solid #b5d8f7;
+            background: #b5d8f7;
+            &:hover {
+              background: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1600px) {
+  section {
+    .container {
+      .row {
+        margin-top: 40px;
+        .product {
+          padding: 12px;
+          .product_controls {
+            .product_price-wrap {
+              max-width: 75px;
+              margin-right: 5px;
+              .product_price {
+                font-size: 18px;
+              }
+            }
+            .thumb-input-number {
+              button {
+                width: 28px;
+                margin: 2px;
+              }
+            }
+            .btn {
+              margin-left: 5px;
+              padding: 14px 10px;
+              font-size: 12px;
+              line-height: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

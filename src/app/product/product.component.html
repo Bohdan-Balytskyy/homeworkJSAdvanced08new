@@ -1,1 +1,46 @@
-<p>product works!</p>
+<div class="center-info">
+    <h2 class="title ">Продукти</h2>
+</div>
+<section>
+    <div class="container">
+        <div class="categories-menu">
+            <ul class="categories-list">
+                <li *ngFor = "let type of typeROlls" (click)="changeActive(type)"
+                class="categories-list-item" [class.active] = type.active>
+                    <a class="category_ajax">{{type.name}}</a></li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="changeWidth7" *ngFor = "let product of products">
+                <div class="product ">
+                    <div class="product_image-wrap">
+                        <a class="product_image">
+                            <img class="img" [src]="product.imagePath"
+                                [alt]="product.name">
+                        </a>
+                    </div>
+                    <div class="product_title-wrap">
+                        <div class="product_title">
+                            <a>{{product.name}}</a>
+                        </div>
+                    </div>
+                    <div class="product_desc">
+                        <p>{{product.composition}}</p>
+                        <div class="product_size"><span>{{product.volume}}</span> г</div>
+                    </div>
+                    <div class="product_controls">
+                        <div class="product_price-wrap">
+                            <div class="product_price"><b>{{product.price}}</b> грн</div>
+                        </div>
+                        <div class="thumb-input-number">
+                            <button type="button">-</button>
+                            <input value="1" readonly="" tabindex="-1" max="999">
+                            <button type="button">+</button>
+                        </div>
+                        <button class="btn">Замовити</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

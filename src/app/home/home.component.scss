@@ -56,6 +56,10 @@
                 font-weight: bold;
                 border-radius: 10px;
                 color: #252525;
+                &:hover {
+                  background: transparent;
+                  color: #fff;
+                }
               }
             }
           }
@@ -107,6 +111,9 @@
               padding: 16px 22px;
               border-radius: 10px;
               color: #252525;
+              &:hover {
+                background: transparent;
+              }
             }
             .after-banner-info {
               text-align: center;

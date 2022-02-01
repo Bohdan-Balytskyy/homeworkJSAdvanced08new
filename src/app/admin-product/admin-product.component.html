@@ -1,1 +1,67 @@
-<p>admin-product works!</p>
+<button class="button" type="button" (click)="isAdd = true">ДОДАТИ ПРОДУКТ</button>
+<table>
+    <thead>
+        <tr>
+            <th>Категорія</th>
+            <th>Назва</th>
+            <th>Шлях</th>
+            <th>Інгредієнти</th>
+            <th>Вага/Об'єм</th>
+            <th>Ціна</th>
+            <th>Картинка</th>
+            <th>Дії</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.category.name}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.path}}</td>
+            <td>{{product.composition}}</td>
+            <td>{{product.volume}}</td>
+            <td>{{product.price}}</td>
+            <td> <img [src]="product.imagePath" alt=""></td>
+            <td>
+                <button type="button" class="edit" (click)="edit(product)">Редагувати</button>
+                <button type="button" class="delete" (click)="delete(product.id)">Видалити</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="modal-block" [hidden]="!isEdit && !isAdd">
+    <form [formGroup]="myForm">
+        <div class="block">
+            <h3>
+                <span *ngIf="isAdd">Add</span><span *ngIf="isEdit">Edit</span> product
+                <span class="close" (click)="closeWindow()">&times;</span>
+            </h3>
+            <select name="select" formControlName = "category" >
+                <option [ngValue]="category" *ngFor = "let category of categorys">{{category.name}}</option>
+            </select>
+            <input type="text" placeholder="enter name here" formControlName="name">
+            <input type="text" placeholder="enter composition here" formControlName="composition">
+            <div>
+                <input type="number" class="shortInput1" placeholder="enter price here" formControlName="price">
+                <input type="text" class="shortInput2" placeholder="enter volume here" formControlName="volume">
+            </div>
+            <input type="text" placeholder="enter path here" formControlName="path">
+            <input type="text" placeholder="enter imagePath here" hidden formControlName="imagePath">
+            <div class="withImage">
+                <input type=”button” value="Загрузити картинку" class="upload" (click)="inputFile.click()"
+                    *ngIf="!isUploaded">
+                <input type="file" (change)=upload($event) #inputFile hidden>
+                <div class="progressbar" *ngIf="!isUploaded">
+                    <span [style.width.%]="uploadPercent"></span>
+                </div>
+                <img [src]="myForm.value.imagePath" alt="" *ngIf="isUploaded">
+                <input type="button" value="Видалити картинку" (click)="deleteImage(myForm.value.imagePath)"
+                    *ngIf="isUploaded" class="upload">
+            </div>
+            <div class="buttons">
+                <input *ngIf="isAdd" type="button" [disabled]="myForm.invalid" value="Add" class="add2" (click)="add()">
+                <input *ngIf="isEdit" type="button" [disabled]="myForm.invalid" value="Save" class="save"
+                    (click)="save()">
+            </div>
+        </div>
+    </form>
+</div>

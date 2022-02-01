@@ -5,7 +5,7 @@
     <div class="row">
         <div class="changeWidth6" *ngFor="let discount of discounts">
             <div class="block-info">
-                <a class="block-info-link" href="#">
+                <a class="block-info-link" [routerLink]="['/actions',discount.id]">
                     <div class="block-info-img">
                         <img [src]="discount.imagePath" alt="">
                     </div>

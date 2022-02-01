@@ -106,7 +106,9 @@ table {
     }
     input[type="text"],
     input[type="date"],
-    textarea {
+    input[type="number"],
+    textarea,
+    select {
       height: 2rem;
       margin: 1rem auto 0;
       width: 80%;
@@ -117,13 +119,21 @@ table {
         box-shadow: 0 0 3px 3px rgba(71, 209, 205, 0.5);
         outline: 0;
       }
+      &.shortInput1 {
+        width: 35%;
+        margin: 1rem 10% 0;
+      }
+      &.shortInput2 {
+        width: 35%;
+        margin: 1rem 10% 0 0%;
+      }
     }
     textarea {
       height: auto;
     }
     .buttons {
       text-align: right;
-      margin-top: 2rem;
+      margin-top: 1rem;
       border-top: 1px solid lightgrey;
       padding: 1rem 0 0.5rem;
       input[type="button"] {
@@ -142,9 +152,10 @@ table {
     }
     .withImage {
       width: 100%;
+      margin-top: 1rem;
       img {
         display: block;
-        height: 150px;
+        height: 120px;
         max-width: 80%;
         object-fit: fill;
         margin: 0 auto;
