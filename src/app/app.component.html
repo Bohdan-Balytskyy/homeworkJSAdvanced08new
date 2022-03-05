@@ -1,8 +1,11 @@
 <div class="content" (click)="showSecondNav()">
   <header>
     <div class="header">
-      <a class="header-logo"  [routerLink]="'/'">
-        <img src="https://monosushi.com.ua/wp-content/uploads/2021/06/logo.svg" alt="">
+      <a class="header-logo" [routerLink]="'/'">
+        <img
+          src="https://monosushi.com.ua/wp-content/uploads/2021/06/logo.svg"
+          alt=""
+        />
         <!-- <img src="https://monosushi.com.ua/wp-content/uploads/2021/08/logo-mobile.svg" alt=""> -->
       </a>
       <nav>
@@ -10,16 +13,22 @@
           <li>
             <a [routerLink]="'/actions'">
               <div>
-                <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/nav-img-gift.svg" alt="">
+                <img
+                  src="https://monosushi.com.ua/wp-content/uploads/2020/10/nav-img-gift.svg"
+                  alt=""
+                />
                 <span>Акції</span>
               </div>
             </a>
           </li>
-          
+
           <li>
             <a [routerLink]="'/product-category/rolls'">
               <div>
-                <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/nav-img-rolls.svg" alt="">
+                <img
+                  src="https://monosushi.com.ua/wp-content/uploads/2020/10/nav-img-rolls.svg"
+                  alt=""
+                />
                 <span>Роли</span>
               </div>
             </a>
@@ -27,7 +36,10 @@
           <li>
             <a [routerLink]="'/product-category/sets'">
               <div>
-                <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/nav-img-sets.svg" alt="">
+                <img
+                  src="https://monosushi.com.ua/wp-content/uploads/2020/10/nav-img-sets.svg"
+                  alt=""
+                />
                 <span>Сети</span>
               </div>
             </a>
@@ -35,7 +47,10 @@
           <li>
             <a [routerLink]="'/product-category/drinks'">
               <div>
-                <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/nav-img-drinks.svg" alt="">
+                <img
+                  src="https://monosushi.com.ua/wp-content/uploads/2020/10/nav-img-drinks.svg"
+                  alt=""
+                />
                 <span>Напої</span>
               </div>
             </a>
@@ -43,7 +58,10 @@
           <li>
             <a [routerLink]="'/product-category/sauces'">
               <div>
-                <img src="https://monosushi.com.ua/wp-content/uploads/2021/09/icon.svg" alt="">
+                <img
+                  src="https://monosushi.com.ua/wp-content/uploads/2021/09/icon.svg"
+                  alt=""
+                />
                 <span>Соуси</span>
               </div>
             </a>
@@ -58,20 +76,34 @@
           </li> -->
         </ul>
       </nav>
-      <div class="burger-menu" [class.active] = "isShowSecondNav">
+      <div class="burger-menu" [class.active]="isShowSecondNav">
         <div class="burger" tabindex="1">
-          <img src="../assets/images/burger_line_list_menu_nav_navigation_option_icon_123231.svg" alt="">
+          <img
+            src="../assets/images/burger_line_list_menu_nav_navigation_option_icon_123231.svg"
+            alt=""
+          />
         </div>
-        <ul class="secondary-nav" >
-          <span >&times;</span>
-          <li><a [routerLink]="'/dostavka-ta-oplata'"><div>Доставка та оплата</div></a></li>
-          <li><a [routerLink]= "'/about-us'"><div>Про нас</div></a></li>
-          <li><a><div>Акції</div> </a></li>
+        <ul class="secondary-nav">
+          <span>&times;</span>
+          <li>
+            <a [routerLink]="'/dostavka-ta-oplata'"
+              ><div>Доставка та оплата</div></a
+            >
+          </li>
+          <li>
+            <a [routerLink]="'/about-us'"><div>Про нас</div></a>
+          </li>
+          <li>
+            <a><div>Акції</div> </a>
+          </li>
         </ul>
       </div>
       <div class="header-call-back">
-        <button >
-          <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/phone.svg" alt="" oncontextmenu="return false">
+        <button>
+          <img
+            src="https://monosushi.com.ua/wp-content/uploads/2020/10/phone.svg"
+            alt=""
+          />
           <span>МИ ЗАТЕЛЕФОНУЄМО</span>
         </button>
         <!-- <a class="btn" href="tel:(097) 878 08 37">
@@ -80,35 +112,45 @@
       </div>
       <div class="header-info">
         <a class="header-phone" href="tel:0978780837">(097) 878 08 37</a>
-        <div class="header-work-time">Працюємо з <b>11:00</b> до <b>23:59</b></div>
+        <div class="header-work-time">
+          Працюємо з <b>11:00</b> до <b>23:59</b>
+        </div>
       </div>
       <div class="header-user" [routerLink]="'/admin'">
-        <img src="https://monosushi.com.ua/wp-content/themes/monosushi/img/user.svg" alt="" oncontextmenu="return false">
+        <img
+          src="https://monosushi.com.ua/wp-content/themes/monosushi/img/user.svg"
+          alt=""
+        />
       </div>
 
-      <div class="header-basket open-cart">
+      <div class="header-basket open-cart" (click)="isCart = !isCart">
         <i>
-          <img src="https://monosushi.com.ua/wp-content/themes/monosushi/img/basket.svg" alt="basket">
-          <span>0</span>
+          <img
+            src="https://monosushi.com.ua/wp-content/themes/monosushi/img/basket.svg"
+            alt="basket"
+          />
+          <span>{{ count }}</span>
         </i>
-        <div class="basket-price empty ">
-          <b id="basket-total-price" class="card-total-price">0</b>
+        <div class="basket-price empty">
+          <b id="basket-total-price" class="card-total-price">{{ total }}</b>
           <span>грн</span>
         </div>
       </div>
     </div>
   </header>
-  
-  <div class="middle">
+
+  <div class="middle" [class.overflow]="isCart">
     <router-outlet></router-outlet>
   </div>
 
-
-  <footer>
+  <footer *ngIf="!isCart">
     <div class="footer">
       <div class="footer-top">
         <a class="logo">
-          <img src="https://monosushi.com.ua/wp-content/uploads/2021/06/logo.svg" alt="">
+          <img
+            src="https://monosushi.com.ua/wp-content/uploads/2021/06/logo.svg"
+            alt=""
+          />
         </a>
         <ul class="footer-menu">
           <li><a>Акції</a></li>
@@ -129,7 +171,7 @@
           </div>
           <div class="work-time">
             <p><strong>Графік роботи</strong></p>
-            <p>працюємо з <b>11:00</b> до <b>23:59</b> </p>
+            <p>працюємо з <b>11:00</b> до <b>23:59</b></p>
           </div>
         </div>
       </div>
@@ -137,39 +179,139 @@
         <div class="copyright">
           <p>© 2022 Monosushi</p>
         </div>
-        
+
         <div class="pay-cards">
           <div class="pay-card-item">
-            <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/pay-card-img-1.svg" alt="">
+            <img
+              src="https://monosushi.com.ua/wp-content/uploads/2020/10/pay-card-img-1.svg"
+              alt=""
+            />
           </div>
           <div class="pay-card-item">
-            <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/pay-card-img-2.svg" alt="">
+            <img
+              src="https://monosushi.com.ua/wp-content/uploads/2020/10/pay-card-img-2.svg"
+              alt=""
+            />
           </div>
           <div class="pay-card-item">
-            <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/pay-card-img-3.svg" alt="">
+            <img
+              src="https://monosushi.com.ua/wp-content/uploads/2020/10/pay-card-img-3.svg"
+              alt=""
+            />
           </div>
         </div>
-      
+
         <div class="social">
           <span>Слідкуйте за нами</span>
           <ul>
             <li>
               <a class="icon-btn" target="_blank">
-                <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/facebook-icon.svg" alt=""> </a>
+                <img
+                  src="https://monosushi.com.ua/wp-content/uploads/2020/10/facebook-icon.svg"
+                  alt=""
+                />
+              </a>
             </li>
             <li>
               <a class="icon-btn" target="_blank">
-                <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/instagram-icon.svg" alt=""> </a>
+                <img
+                  src="https://monosushi.com.ua/wp-content/uploads/2020/10/instagram-icon.svg"
+                  alt=""
+                />
+              </a>
             </li>
           </ul>
         </div>
-      
+
         <div class="develope">
-          <a target="_blank" href="http://redstone.media/" class="footer-dev-logo">
-            <span>Створення сайтів REDSTONE </span></a>
+          <a
+            target="_blank"
+            href="http://redstone.media/"
+            class="footer-dev-logo"
+          >
+            <span>Створення сайтів REDSTONE </span></a
+          >
         </div>
       </div>
     </div>
-
   </footer>
+
+  <div class="cart" *ngIf="isCart">
+    <div class="cart-popup-out">
+      <div class="cart_items">
+        <div class="cart-empty-message" *ngIf="total === 0">
+          <div class="cart-empty-img">
+            <img
+              src="https://monosushi.com.ua/wp-content/themes/monosushi/img/icons/cart-empty-img.svg"
+              alt=""
+            />
+          </div>
+          <div class="title">Кошик порожній</div>
+          <a class="btn" [routerLink]="'/'" (click)="isCart = false"
+            >Перейти до каталогу</a
+          >
+        </div>
+
+        <div class="prod_horiz" *ngFor="let product of basket; let i = index">
+          <a
+            class="prod_horiz-img"
+            (click)="isCart = false"
+            [routerLink]="[
+              '/product-category/' + product.category.path,
+              product.id
+            ]"
+          >
+            <img [src]="product.imagePath" />
+          </a>
+          <div class="prod_horiz-desc">
+            <a
+              class="title"
+              (click)="isCart = false"
+              [routerLink]="[
+                '/product-category/' + product.category.path,
+                product.id
+              ]"
+            >
+              {{ product.name }}
+            </a>
+            <div class="prod_horiz-controls">
+              <div class="thumb-input-number">
+                <button type="button" (click)="productCount(i, false)">
+                  -
+                </button>
+                <input
+                  [value]="product.count"
+                  readonly=""
+                  tabindex="-1"
+                  max="999"
+                />
+                <button type="button" (click)="productCount(i, true)">+</button>
+              </div>
+              <div class="price_default">
+                <b class="price">{{ product.price * product.count }}</b>
+                грн
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                (click)="delFromBasket(i)"
+              >
+                <div class="trash"></div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cart_bottom">
+        <div class="cart_price-wrap">
+          Сума: <b>{{ total }}</b> грн
+        </div>
+        <a class="btn" [class.disabled]="total === 0" (click)="completeOrder()"
+          >ОФОРМИТИ ЗАМОВЛЕННЯ</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="cart_bg-layer" *ngIf="isCart"></div>
 </div>

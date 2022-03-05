@@ -1,22 +1,37 @@
 <div class="container">
-    <div class="row">
-        <div class="changeWidth5">
-            <div class="mini-banner ">
-                <div class="center-info">
-                    <h2>{{discount?.title}}</h2>
-                </div>
-            </div>
+  <ul class="menu">
+    <li>
+      <a [routerLink]="'/'"><span>Головна</span></a>
+    </li>
+    <li>
+      <a [routerLink]="['/actions/']"><span>Акції</span></a>
+    </li>
+    <li class="active">
+      <span>{{
+        discount.name.length > discount.title.length
+          ? discount.title
+          : discount.name
+      }}</span>
+    </li>
+  </ul>
+  <div class="row">
+    <div class="changeWidth5">
+      <div class="mini-banner">
+        <div class="center-info">
+          <h2>{{ discount.title }}</h2>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="changeWidth5">
-            <div class="simple-page">
-                <ul>
-                    <li>{{discount?.description}}</li>
-                </ul>
-            </div>
-        </div>
+  <div class="row">
+    <div class="changeWidth5">
+      <div class="simple-page">
+        <ul>
+          <li>{{ discount.description }}</li>
+        </ul>
+      </div>
     </div>
+  </div>
 </div>

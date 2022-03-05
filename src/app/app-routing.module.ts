@@ -10,28 +10,44 @@ import { DeliveryComponent } from './delivery/delivery.component';
 import { DiscountInfoComponent } from './discount-info/discount-info.component';
 import { DiscountComponent } from './discount/discount.component';
 import { HomeComponent } from './home/home.component';
+import { ProductInfoComponent } from './product-info/product-info.component';
 import { ProductComponent } from './product/product.component';
+import { DiscountResolver } from './resolvers/discount.resolver';
+import { ProductResolver } from './resolvers/product.resolver';
 
 const routes: Routes = [
-  { 'path': 'dostavka-ta-oplata', component: DeliveryComponent },
-  { 'path': 'about-us', component: AboutUsComponent },
+  { path: 'dostavka-ta-oplata', component: DeliveryComponent },
+  { path: 'about-us', component: AboutUsComponent },
   {
-    'path': 'admin', component: AdminComponent, children: [
-      {'path': 'category', component: AdminCategoryComponent},
-      { 'path': 'action', component: AdminDiscountComponent },
-      { 'path': 'product', component: AdminProductComponent },
-      { 'path': 'order', component: AdminOrderComponent },
-      {'path': '', pathMatch: 'full', redirectTo:'category'}
-      
-  ] },
-  { 'path': 'product-category/:category', component: ProductComponent },
-  { 'path': 'actions', component: DiscountComponent },
-  { 'path': 'actions/:id',component: DiscountInfoComponent},
-  { 'path': '', component: HomeComponent}
+    path: 'admin',
+    component: AdminComponent,
+    children: [
+      { path: 'category', component: AdminCategoryComponent },
+      { path: 'action', component: AdminDiscountComponent },
+      { path: 'product', component: AdminProductComponent },
+      { path: 'order', component: AdminOrderComponent },
+      { path: '', pathMatch: 'full', redirectTo: 'category' },
+    ],
+  },
+  { path: 'product-category/:category', component: ProductComponent },
+  {
+    path: 'product-category/:category/:id',
+    component: ProductInfoComponent,
+    resolve: { product: ProductResolver },
+  },
+  { path: 'actions', component: DiscountComponent },
+  {
+    path: 'actions/:id',
+    component: DiscountInfoComponent,
+    resolve: {
+      discount: DiscountResolver,
+    },
+  },
+  { path: '', component: HomeComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

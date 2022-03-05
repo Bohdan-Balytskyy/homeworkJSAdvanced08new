@@ -20,6 +20,7 @@ import { DiscountInfoComponent } from './discount-info/discount-info.component';
 import {environment} from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { ProductInfoComponent } from './product-info/product-info.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     AdminCategoryComponent,
     AdminProductComponent,
     AdminOrderComponent,
-    DiscountInfoComponent
+    DiscountInfoComponent,
+    ProductInfoComponent
   ],
   imports: [
     BrowserModule,

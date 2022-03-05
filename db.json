@@ -46,7 +46,7 @@
   "products": [
     {
       "name": "Філадельфія з лососем",
-      "path": "rolls",
+      "path": "filadelfiya-z-lososem",
       "composition": "Риc, крем сир, огірок, лосось",
       "volume": "280",
       "price": 174,
@@ -58,6 +58,54 @@
       },
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-4af8b.appspot.com/o/images%2F1.-filadelfiya-z-lososem.jpg?alt=media&token=4a3bfa59-0686-4407-9d64-56a74da7e97e",
       "id": 1,
+      "count": 1
+    },
+    {
+      "name": "Запечений сет",
+      "path": "zapechenyj-set-2",
+      "composition": "Запечений сирний з креветкою Запечений моно з лососем",
+      "volume": "680",
+      "price": 400,
+      "category": {
+        "name": "Сети",
+        "path": "sets",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-4af8b.appspot.com/o/images%2Fnav-img-sets.svg?alt=media&token=49add355-d705-4eb9-abf6-8425cb1f4fc5",
+        "id": 2
+      },
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-4af8b.appspot.com/o/images%2F1.-zapechenyj-set.jpg?alt=media&token=c0b722a3-390b-4d58-8477-5ac8bd4b6546",
+      "id": 2,
+      "count": 1
+    },
+    {
+      "name": "Імбир",
+      "path": "imbyr",
+      "composition": "",
+      "volume": "30",
+      "price": 9,
+      "category": {
+        "name": "Соуси",
+        "path": "sauces",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-4af8b.appspot.com/o/images%2Ficon.svg?alt=media&token=e4ff2bf5-1d13-47b6-ada6-23dc8de8f65e",
+        "id": 4
+      },
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-4af8b.appspot.com/o/images%2Fimbyr.png?alt=media&token=eb269353-156f-42bd-bd3d-807134071b53",
+      "id": 3,
+      "count": 1
+    },
+    {
+      "name": "Coca-Cola",
+      "path": "coca-cola",
+      "composition": null,
+      "volume": "0.5",
+      "price": 24,
+      "category": {
+        "name": "Напої",
+        "path": "drinks",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-4af8b.appspot.com/o/images%2Fnav-img-drinks.svg?alt=media&token=ef6ad324-a649-4cd6-9374-879abc22e2d4",
+        "id": 3
+      },
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-4af8b.appspot.com/o/images%2Fcoca_cola.png?alt=media&token=b094a962-0af8-40a0-932f-85466bb883a6",
+      "id": 4,
       "count": 1
     }
   ]

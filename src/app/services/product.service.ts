@@ -19,7 +19,7 @@ export class ProductService {
     return this.http.get<Iproduct>(`${this.url}/${i}`)
   }
   getAllByCategory(category:string): Observable<Iproduct[]> {
-    return this.http.get<Iproduct[]>(`${this.url}?categorys.path=${category}`)
+    return this.http.get<Iproduct[]>(`${this.url}?category.path=${category}`)
   }
   postProdyct(body: Iproduct): Observable<Iproduct>{
     return this.http.post<Iproduct>(this.url, body)

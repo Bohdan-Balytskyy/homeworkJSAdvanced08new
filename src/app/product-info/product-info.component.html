@@ -1,0 +1,56 @@
+<div class="container">
+  <ul class="menu">
+    <li>
+      <a [routerLink]="'/'"><span>Головна</span></a>
+    </li>
+    <li>
+      <a [routerLink]="['/product-category/', product.category.path]"
+        ><span>{{ product.category.name }}</span></a
+      >
+    </li>
+    <!-- <li>
+      <a><span>Філадельфія</span></a>
+    </li> -->
+    <li class="active">
+      <span>{{ product.name }}</span>
+    </li>
+  </ul>
+
+  <div class="row">
+    <div class="changeWidth4">
+      <div class="swiper-slide">
+        <div class="product_detail-img">
+          <img [src]="product.imagePath" [alt]="product.name" />
+        </div>
+      </div>
+    </div>
+    <div class="changeWidth4">
+      <div class="product_detail">
+        <h1>{{ product.name }}</h1>
+        <div class="description"><b>Склад: </b>{{ product.composition }}</div>
+        <div class="product_size">
+          <b>Вага: </b><span class="size">{{ product.volume }}</span> г
+        </div>
+        <ul class="product_variations"></ul>
+        <div class="product_detail-controls">
+          <div class="product_price-wrap">
+            <div class="product_price">
+              <b class="price">{{ product.price * product.count }}</b> грн
+            </div>
+          </div>
+          <div class="thumb-input-number">
+            <button (click)="productCount(false)" type="button">-</button>
+            <input
+              [value]="product.count"
+              readonly=""
+              tabindex="-1"
+              max="999"
+            />
+            <button (click)="productCount(true)" type="button">+</button>
+          </div>
+          <button class="btn" (click)="addToBasket()">ЗАМОВИТИ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
